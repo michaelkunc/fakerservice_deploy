@@ -4,3 +4,4 @@ ssl_cert/
 fabfile.py
 hosts
 *.retry
+deploy_key/
