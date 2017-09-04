@@ -1,0 +1,7 @@
+- name: Install git.
+  apt: name=git-core state=present update_cache=yes
+  become: true
+
+
+- name: Clone latest code from git.
+  git: repo={{http_code_repo}} dest={{app_dir}}

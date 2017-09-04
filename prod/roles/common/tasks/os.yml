@@ -1,0 +1,25 @@
+- name: Update packages.
+  apt: update_cache=yes
+  become: true
+
+- name: Install Fail2Ban, Python and Nginx.
+
+  apt: name={{item}}
+  with_items:
+    - fail2ban
+    - python3-pip
+    - python3-dev
+    - nginx
+  become: true
+
+- name: Enable SSH on port 22.
+  ufw: rule=allow port=22
+  become: true
+
+- name: Allow traffic on port 5000
+  ufw: rule=allow port=5000
+  become: true
+
+- name: Enable UFW.
+  ufw: state=enabled
+  become: true

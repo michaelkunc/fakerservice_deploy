@@ -1,0 +1,12 @@
+- name: Write {{app_name}} sites available.
+  template: 
+    src: "{{prod_dir}}roles/common/templates/nginx.j2"
+    dest: /etc/nginx/sites-available/{{app_name}}
+  become: true
+
+- name: Create symlink for sites-available
+  file:
+    src: /etc/nginx/sites-available/{{app_name}}
+    dest: /etc/nginx/sites-enabled/{{app_name}}
+    state: link
+  become: true

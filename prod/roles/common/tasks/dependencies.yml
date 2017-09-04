@@ -1,0 +1,22 @@
+- name: Install virtualenv via pip.
+  pip:
+    executable: pip3
+    name: virtualenv
+
+- name: Create virtualenv dir.
+  file: path={{venv_dir}} state=directory
+
+- name: Install dependencies into virtualenv.
+  pip: 
+    requirements: "{{app_dir}}/requirements.txt"
+    virtualenv: "{{venv_dir}}"
+    virtualenv_python: /usr/bin/python3
+
+- name: Install Gunicorn.
+  pip:
+    name: gunicorn
+    virtualenv: "{{venv_dir}}"
+    virtualenv_python: /usr/bin/python3
+
+# need to restart the daemon
+# Warning: fakerservice.service changed on disk. Run 'systemctl daemon-reload' to reload units.
