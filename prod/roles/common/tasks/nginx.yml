@@ -10,3 +10,5 @@
     dest: /etc/nginx/sites-enabled/{{app_name}}
     state: link
   become: true
+
+  #need to configure sites-available to point to the domain name.
