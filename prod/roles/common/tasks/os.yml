@@ -16,10 +16,6 @@
   ufw: rule=allow port=22
   become: true
 
-- name: Allow traffic on port 5000
-  ufw: rule=allow port=5000
-  become: true
-
 - name: Enable UFW.
   ufw: state=enabled
   become: true

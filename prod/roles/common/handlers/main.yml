@@ -1,7 +1,0 @@
-- name: restart nginx
-  service: name=nginx state=restarted
-  sudo: yesr
-
-- name: restart mongodb
-  service: name=mongodb state=restarted
-  sudo: yes

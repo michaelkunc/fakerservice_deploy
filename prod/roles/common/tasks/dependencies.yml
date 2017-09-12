@@ -18,5 +18,3 @@
     virtualenv: "{{venv_dir}}"
     virtualenv_python: /usr/bin/python3
 
-# need to restart the daemon
-# Warning: fakerservice.service changed on disk. Run 'systemctl daemon-reload' to reload units.
