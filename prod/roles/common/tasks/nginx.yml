@@ -11,3 +11,11 @@
     state: link
   become: true
 
+- name: Open up UFW for Nginx.
+  ufw: 
+    rule: allow
+    name: Nginx Full
+  become: true
+
+#need to look at how to fix the nginx template to use the new ip address.
+#also need to restart the nginx service.

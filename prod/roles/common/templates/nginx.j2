@@ -1,9 +1,11 @@
 server {
     listen 80;
     server_name www.fakerservice.com fakerservice.com 45.79.88.65;
+    {# server_name 173.255.249.122; #}
 
     location / {
         include proxy_params;
         proxy_pass http://unix:{{app_dir}}/{{app_name}}.sock;
     }
 }
+

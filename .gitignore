@@ -1,5 +1,4 @@
 ssh_keys/
-ssl_cert/
 *.pyc
 fabfile.py
 hosts

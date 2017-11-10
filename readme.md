@@ -1,17 +1,14 @@
-# Fakerservice Deploy
+# Airflow Deploy
 
-Ansible playbook for deploying www.fakerservice.com. Playbook assumes a user with sudo rights. 
+An Ansible playbook for installing and configuring Apache Airflow. 
+This playbook will override the standard SQLite installation and provide a MySQL instance to hold metadata.
 
-### Infrastructure
-- Ubuntu 16.04
-- Gunicorn
-- Nginx
+# Assumptions
+A non-root user with sudo rights.
+Python 2.7 
+Ubuntu 17.04
 
-### [Application](https://github.com/michaelkunc/fakerservice)
-- Python 3.5
-- Flask
-- [Faker](https://github.com/joke2k/faker)
-- Travis CI
-
+# Other notes
+I use fabric to perform some basic bootstrapping of the server. The fabric script creates a user called data_engineer and gives the role sudo rights.
 
  
