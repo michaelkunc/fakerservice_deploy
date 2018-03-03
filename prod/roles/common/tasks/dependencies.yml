@@ -2,6 +2,8 @@
   pip:
     executable: pip3
     name: virtualenv
+  become: yes
+    
 
 - name: Create virtualenv dir.
   file: path={{venv_dir}} state=directory

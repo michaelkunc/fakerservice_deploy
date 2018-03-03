@@ -11,3 +11,9 @@
     state: link
   become: true
 
+- name: Open up UFW for Nginx.
+  ufw: 
+    rule: allow
+    name: Nginx Full
+  become: true
+ 
